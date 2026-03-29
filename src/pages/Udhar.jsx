@@ -107,22 +107,66 @@ export default function Udhar() {
       <div className="flex-1 p-4 md:p-8 lg:p-12">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight text-center md:text-left">📒 Bahi Khata</h1>
-            <p className="text-gray-500 font-medium text-center md:text-left">Transaction Management</p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-8">
+  
+  {/* Left Side: Title & Tagline */}
+  <div className="relative pl-6 group">
+    {/* Dynamic Vertical Accent Line */}
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-10 bg-gradient-to-b from-indigo-500 to-emerald-400 rounded-full group-hover:h-14 transition-all duration-500" />
+    
+    <div className="space-y-1">
+      <div className="flex items-center gap-2 mb-1">
+        <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] font-bold text-emerald-600 uppercase tracking-widest border border-emerald-100/50">
+          Digital Ledger
+        </span>
+      </div>
+      <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter flex items-center gap-3">
+        <span className="filter drop-shadow-sm">📒</span> 
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-900">
+          Bahi Khata
+        </span>
+      </h1>
+      <p className="text-sm md:text-base text-slate-500 font-medium flex items-center gap-2">
+        <span className="w-5 h-[1.5px] bg-slate-200"></span>
+        Professional Transaction Management
+      </p>
+    </div>
+  </div>
+
+  {/* Right Side: Smart Glass Clock & Date */}
+  <div className="w-full md:w-auto relative group">
+    {/* Subtle Background Glow */}
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-emerald-400 rounded-[28px] blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
+    
+    <div className="relative flex items-center gap-6 px-8 py-5 bg-white/70 backdrop-blur-xl border border-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+      
+      {/* Time Section */}
+      <div className="flex flex-col items-center md:items-start">
+        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-0.5">Current Time</span>
+        <div className="flex items-center gap-2.5 text-indigo-600 font-black text-xl tracking-tight">
+          <div className="p-1.5 bg-indigo-50 rounded-lg">
+            <FaClock className="text-sm" />
           </div>
-          
-          <div className="w-full md:w-auto bg-white px-6 py-4 rounded-[24px] shadow-sm border border-gray-100 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
-            <div className="flex items-center gap-2 text-blue-600 font-black text-lg">
-              <FaClock /> {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-            </div>
-            <div className="hidden sm:block h-6 w-[1px] bg-gray-100"></div>
-            <div className="flex items-center gap-2 text-indigo-600 font-bold">
-              <FaCalendarDay /> {currentTime.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}
-            </div>
-          </div>
+          {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </div>
+      </div>
+
+      {/* Elegant Vertical Divider */}
+      <div className="h-10 w-[1.5px] bg-gradient-to-b from-transparent via-slate-200 to-transparent"></div>
+
+      {/* Date Section */}
+      <div className="flex flex-col items-center md:items-start">
+        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-0.5">Today</span>
+        <div className="flex items-center gap-2.5 text-emerald-600 font-bold text-lg tracking-tight">
+          <div className="p-1.5 bg-emerald-50 rounded-lg text-emerald-500">
+            <FaCalendarDay className="text-sm" />
+          </div>
+          {currentTime.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {/* 📊 COMPACT SUMMARY CARDS */}

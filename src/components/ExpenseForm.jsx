@@ -186,7 +186,7 @@ export default function ExpenseForm({ fetchExpenses }) {
         <button 
           onClick={saveAllExpenses}
           disabled={loading}
-          className={`w-full md:w-auto px-8 py-3 bg-slate-900 text-white rounded-xl font-black text-sm shadow-lg shadow-slate-200 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 ${loading ? 'opacity-50' : ''}`}
+          className={`w-full md:w-auto px-8 py-3 bg-emerald-700 text-white rounded-xl font-black text-sm shadow-lg shadow-slate-200 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 ${loading ? 'opacity-50' : ''}`}
         >
           {loading ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Save size={18} />}
           <span>Save {rows.length} {rows.length > 1 ? 'Entries' : 'Entry'}</span>
