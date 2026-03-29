@@ -1,0 +1,3 @@
+.input-modern {
+  @apply bg-white border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none shadow-sm transition-all;
+}
